@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALIYO MOMOT UNIVERSITY - Medical & Engineering Education</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>ALIYO MOMOT UNIVERSITY</h1>
+                    <p class="tagline">Excellence in Medical & Engineering Education</p>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#programs" class="nav-link">Programs</a></li>
+                    <li><a href="#admissions" class="nav-link">Admissions</a></li>
+                    <li><a href="#student-portal" class="nav-link">Student Portal</a></li>
+                    <li><a href="#faculty" class="nav-link">Faculty</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to ALIYO MOMOT UNIVERSITY</h2>
+                <p>Pioneering the future of Medical and Engineering Education since our establishment</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('admissions')">Apply Now</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('programs')">Explore Programs</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="programs">
+            <div class="container">
+                <h2 class="section-title">Our Programs</h2>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">🏥</div>
+                        <h3>Medical Programs</h3>
+                        <ul>
+                            <li>Doctor of Medicine (MD)</li>
+                            <li>Bachelor of Medicine, Bachelor of Surgery (MBBS)</li>
+                            <li>Master of Surgery (MS)</li>
+                            <li>Bachelor of Nursing</li>
+                            <li>Bachelor of Pharmacy</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="showProgramDetails('medical')">Learn More</button>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon">⚙️</div>
+                        <h3>Engineering Programs</h3>
+                        <ul>
+                            <li>Computer Science & Engineering</li>
+                            <li>Mechanical Engineering</li>
+                            <li>Electrical Engineering</li>
+                            <li>Civil Engineering</li>
+                            <li>Biomedical Engineering</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="showProgramDetails('engineering')">Learn More</button>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-icon">🔬</div>
+                        <h3>Research Programs</h3>
+                        <ul>
+                            <li>PhD in Medical Sciences</li>
+                            <li>PhD in Engineering</li>
+                            <li>Postdoctoral Fellowships</li>
+                            <li>Research Internships</li>
+                            <li>Collaborative Research</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="showProgramDetails('research')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admissions Section -->
+        <section id="admissions" class="admissions">
+            <div class="container">
+                <h2 class="section-title">Admissions</h2>
+                <div class="admissions-content">
+                    <div class="admissions-info">
+                        <h3>Application Process</h3>
+                        <ol>
+                            <li>Complete the online application form</li>
+                            <li>Submit required documents (transcripts, test scores)</li>
+                            <li>Pay application fee</li>
+                            <li>Attend interview (if required)</li>
+                            <li>Receive admission decision</li>
+                        </ol>
+                        <h3>Important Dates</h3>
+                        <ul>
+                            <li><strong>Fall 2026:</strong> Applications open January 1</li>
+                            <li><strong>Deadline:</strong> March 31, 2026</li>
+                            <li><strong>Decision:</strong> May 15, 2026</li>
+                            <li><strong>Enrollment:</strong> August 1, 2026</li>
+                        </ul>
+                    </div>
+                    <div class="application-form">
+                        <h3>Quick Inquiry</h3>
+                        <form id="inquiry-form">
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <input type="tel" placeholder="Phone Number" required>
+                            <select required>
+                                <option value="">Select Program Interest</option>
+                                <option value="medical">Medical Programs</option>
+                                <option value="engineering">Engineering Programs</option>
+                                <option value="research">Research Programs</option>
+                            </select>
+                            <textarea placeholder="Message" rows="4"></textarea>
+                            <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Portal Section -->
+        <section id="student-portal" class="student-portal">
+            <div class="container">
+                <h2 class="section-title">Student Portal</h2>
+                <div class="portal-grid">
+                    <div class="portal-card" onclick="handlePortalAction('grades')">
+                        <div class="portal-icon">📊</div>
+                        <h3>View Grades</h3>
+                        <p>Check your academic performance and grades</p>
+                    </div>
+                    <div class="portal-card" onclick="handlePortalAction('schedule')">
+                        <div class="portal-icon">📅</div>
+                        <h3>Class Schedule</h3>
+                        <p>View your current semester schedule</p>
+                    </div>
+                    <div class="portal-card" onclick="handlePortalAction('register')">
+                        <div class="portal-icon">📝</div>
+                        <h3>Course Registration</h3>
+                        <p>Register for upcoming courses</p>
+                    </div>
+                    <div class="portal-card" onclick="handlePortalAction('library')">
+                        <div class="portal-icon">📚</div>
+                        <h3>Library Resources</h3>
+                        <p>Access digital library and resources</p>
+                    </div>
+                    <div class="portal-card" onclick="handlePortalAction('payments')">
+                        <div class="portal-icon">💳</div>
+                        <h3>Payments</h3>
+                        <p>View and manage tuition payments</p>
+                    </div>
+                    <div class="portal-card" onclick="handlePortalAction('profile')">
+                        <div class="portal-icon">👤</div>
+                        <h3>My Profile</h3>
+                        <p>Update personal information</p>
+                    </div>
+                </div>
+                <div class="login-prompt">
+                    <p>Please <button class="btn btn-link" onclick="showLoginModal()">login</button> to access the full portal</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculty Section -->
+        <section id="faculty" class="faculty">
+            <div class="container">
+                <h2 class="section-title">Faculty & Staff</h2>
+                <div class="faculty-content">
+                    <div class="faculty-stats">
+                        <div class="stat-card">
+                            <h3>150+</h3>
+                            <p>Faculty Members</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>85%</h3>
+                            <p>PhD Holders</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>20:1</h3>
+                            <p>Student-Faculty Ratio</p>
+                        </div>
+                    </div>
+                    <div class="faculty-resources">
+                        <h3>Faculty Resources</h3>
+                        <ul>
+                            <li><a href="#" onclick="showAlert('Faculty Portal'); return false;">Faculty Portal</a></li>
+                            <li><a href="#" onclick="showAlert('Teaching Resources'); return false;">Teaching Resources</a></li>
+                            <li><a href="#" onclick="showAlert('Research Grants'); return false;">Research Grants</a></li>
+                            <li><a href="#" onclick="showAlert('Professional Development'); return false;">Professional Development</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-item">
+                            <strong>📍 Address:</strong>
+                            <p>123 University Boulevard<br>Medical & Engineering Campus<br>City, State 12345</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📞 Phone:</strong>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📧 Email:</strong>
+                            <p>info@aliyomomot.edu</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>🕒 Office Hours:</strong>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send a Message</h3>
+                        <form id="contact-form">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="text" placeholder="Subject" required>
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Student Login</h2>
+            <form id="login-form">
+                <input type="text" placeholder="Student ID" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="modal-footer">Don't have an account? <a href="#" onclick="showAlert('Registration opens during admission period'); return false;">Register here</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ALIYO MOMOT UNIVERSITY</h4>
+                    <p>Excellence in Medical & Engineering Education</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" onclick="showAlert('Facebook page'); return false;">Facebook</a>
+                        <a href="#" onclick="showAlert('Twitter page'); return false;">Twitter</a>
+                        <a href="#" onclick="showAlert('LinkedIn page'); return false;">LinkedIn</a>
+                        <a href="#" onclick="showAlert('Instagram page'); return false;">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ALIYO MOMOT UNIVERSITY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

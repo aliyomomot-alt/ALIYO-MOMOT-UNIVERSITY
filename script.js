@@ -14,7 +14,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Apply button functionality
 document.querySelector('.cta-button')?.addEventListener('click', function() {
-    alert('Thank you for your interest in ALIYO MOMOT UNIVERSITY! Our admissions team will contact you soon.');
+    // Create a simple toast notification
+    const toast = document.createElement('div');
+    toast.textContent = 'Thank you for your interest in ALIYO MOMOT UNIVERSITY! Our admissions team will contact you soon.';
+    toast.style.cssText = 'position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #667eea; color: white; padding: 1rem 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 10000; max-width: 90%; text-align: center;';
+    document.body.appendChild(toast);
+    setTimeout(() => {
+        toast.style.transition = 'opacity 0.5s';
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 500);
+    }, 3000);
 });
 
 // Add scroll animation for sections
@@ -49,7 +58,7 @@ window.addEventListener('scroll', function() {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 100) {
+        if (window.scrollY >= sectionTop - 100) {
             current = section.getAttribute('id');
         }
     });
